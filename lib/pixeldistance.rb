@@ -17,11 +17,11 @@ module PixelDistance
   end
 
   private
-  def lon_to_x(lon)
+  def self.lon_to_x(lon)
     (OFFSET + RADIUS * lon * Math::PI / 180).to_i
   end
 
-  def lat_to_y(lat)
+  def self.lat_to_y(lat)
     (OFFSET + RADIUS *
         Math.log((1 + Math.sin(lat * Math::PI / 180)) /
                      (1 - Math.sin(lat * Math::PI / 180))) / 2)
